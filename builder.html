@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Website Builder</h1>
+    <div>
+      <button class="control-btn" onclick="logout()" style="margin-right:16px;">Logout</button>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+  
+
+  <main class="main-content">
+    <aside class="sidebar" aria-label="Component List">
+      <h2>Components</h2>
+      <ul class="component-list">
+        <li><button class="component" draggable="true" data-type="text" aria-label="Text">Text</button></li>
+        <li><button class="component" draggable="true" data-type="heading" aria-label="Heading">Heading</button></li>
+        <li><button class="component" draggable="true" data-type="paragraph" aria-label="Paragraph">Paragraph</button></li>
+        <li><button class="component" draggable="true" data-type="button" aria-label="Button">Button</button></li>
+        <li><button class="component" draggable="true" data-type="image" aria-label="Image">Image</button></li>
+        <li><button class="component" draggable="true" data-type="divider" aria-label="Divider">Divider</button></li>
+        <li><button class="component" draggable="true" data-type="list" aria-label="List">List</button></li>
+        <li><button class="component" draggable="true" data-type="card" aria-label="Card">Card</button></li>
+      </ul>
+    </aside>
+
+    <section class="canvas-section">
+      <div class="controls">
+        <button onclick="clearCanvas()" class="control-btn">Clear</button>
+        <button onclick="exportHTML()" class="control-btn">Export HTML</button>
+        <button onclick="previewCanvas()" class="control-btn">Live Preview</button>
+        <button onclick="undo()" class="control-btn">Undo</button>
+        <button onclick="redo()" class="control-btn">Redo</button>
+      </div>
+
+      <div class="canvas" id="canvas" tabindex="0" aria-label="Design Canvas">
+        <p class="hint">Drag components here...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>&copy; 2025 Website Builder. All rights reserved.</small>
+  </footer>
+
+  <script src="script.js"></script>
+  
+<script>
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>

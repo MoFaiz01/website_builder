@@ -1,0 +1,297 @@
+/* Theme variables */
+:root {
+    --primary-bg: #f0f2f5;
+    --primary-color: #222;
+    --header-bg: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    --sidebar-bg: #fff;
+    --sidebar-color: #222;
+    --sidebar-border: #e3e8ee;
+    --component-bg: linear-gradient(90deg, #e3e8ee 0%, #f7fafc 100%);
+    --component-border: #d0d7e2;
+    --component-active-bg: #d0e6ff;
+    --component-active-border: #4f8cff;
+    --canvas-bg: #fff;
+    --canvas-border: #e3e8ee;
+    --canvas-shadow: 0 4px 32px rgba(79,140,255,0.10);
+    --hint-color: #b0b0b0;
+    --control-btn-bg: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    --control-btn-hover-bg: linear-gradient(90deg, #6ed6ff 0%, #4f8cff 100%);
+    --editable-bg: #f7fafc;
+    --editable-border: #e3e8ee;
+    --editable-focus-bg: #eaf4ff;
+    --editable-focus-border: #4f8cff;
+    --card-bg: linear-gradient(90deg, #e3e8ee 0%, #f7fafc 100%);
+    --card-border: #d0d7e2;
+    --card-title: #4f8cff;
+    --footer-bg: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    --footer-color: #fff;
+  }
+  
+  /* Dark theme overrides */
+  body.dark-theme {
+    --primary-bg: #181c23;
+    --primary-color: #f7fafc;
+    --header-bg: linear-gradient(90deg, #232946 0%, #4f8cff 100%);
+    --sidebar-bg: #232946;
+    --sidebar-color: #f7fafc;
+    --sidebar-border: #232946;
+    --component-bg: linear-gradient(90deg, #232946 0%, #353b48 100%);
+    --component-border: #353b48;
+    --component-active-bg: #4f8cff;
+    --component-active-border: #6ed6ff;
+    --canvas-bg: #232946;
+    --canvas-border: #353b48;
+    --canvas-shadow: 0 4px 32px rgba(79,140,255,0.18);
+    --hint-color: #7a7a7a;
+    --control-btn-bg: linear-gradient(90deg, #4f8cff 0%, #232946 100%);
+    --control-btn-hover-bg: linear-gradient(90deg, #232946 0%, #4f8cff 100%);
+    --editable-bg: #232946;
+    --editable-border: #353b48;
+    --editable-focus-bg: #232946;
+    --editable-focus-border: #6ed6ff;
+    --card-bg: linear-gradient(90deg, #232946 0%, #353b48 100%);
+    --card-border: #353b48;
+    --card-title: #6ed6ff;
+    --footer-bg: linear-gradient(90deg, #232946 0%, #4f8cff 100%);
+    --footer-color: #f7fafc;
+  }
+  
+  body {
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  }
+  
+  .header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 28px 0 18px 40px;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .theme-toggle-btn {
+    margin-right: 40px;
+    background: none;
+    border: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .theme-toggle-btn:hover, .theme-toggle-btn:focus {
+    background: rgba(255,255,255,0.12);
+    outline: none;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+  
+  .sidebar {
+    width: 260px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-color);
+    padding: 36px 24px 24px 24px;
+    box-shadow: 2px 0 16px rgba(79,140,255,0.07);
+    border-right: 1px solid var(--sidebar-border);
+  }
+  
+  .sidebar h2 {
+    font-size: 1.15rem;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+    color: #4f8cff;
+    font-weight: 600;
+  }
+  
+  .component-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .component-list li {
+    margin-bottom: 18px;
+  }
+  
+  .component {
+    width: 100%;
+    padding: 13px 0;
+    background: var(--component-bg);
+    color: var(--primary-color);
+    border: 1.5px solid var(--component-border);
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: grab;
+    transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+    box-shadow: 0 1px 6px rgba(79,140,255,0.04);
+    outline: none;
+    text-align: left;
+    padding-left: 18px;
+  }
+  .component:active, .component:focus {
+    background: var(--component-active-bg);
+    border: 1.5px solid var(--component-active-border);
+    box-shadow: 0 2px 12px rgba(79,140,255,0.10);
+  }
+  
+  .canvas-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 48px 32px 48px;
+    background: var(--primary-bg);
+  }
+  
+  .canvas {
+    flex: 1;
+    background: var(--canvas-bg);
+    border-radius: 18px;
+    box-shadow: var(--canvas-shadow);
+    padding: 40px 32px;
+    min-height: 340px;
+    margin-bottom: 32px;
+    position: relative;
+    transition: box-shadow 0.2s, background 0.2s, border 0.2s;
+    border: 1.5px solid var(--canvas-border);
+  }
+  .canvas:focus {
+    box-shadow: 0 6px 36px rgba(79,140,255,0.18);
+    outline: 2px solid var(--component-active-border);
+  }
+  .canvas .hint {
+    color: var(--hint-color);
+    font-size: 1.15rem;
+    text-align: center;
+    margin-top: 100px;
+    letter-spacing: 0.5px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    background: none;
+    padding: 0;
+  }
+  
+  .control-btn {
+    padding: 12px 32px;
+    background: var(--control-btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 6px rgba(79,140,255,0.08);
+    outline: none;
+    letter-spacing: 0.5px;
+  }
+  .control-btn:hover, .control-btn:focus {
+    background: var(--control-btn-hover-bg);
+    box-shadow: 0 2px 12px rgba(79,140,255,0.16);
+    outline: none;
+  }
+  
+  .editable {
+    outline: none;
+    cursor: text;
+    background: var(--editable-bg);
+    border-radius: 6px;
+    padding: 6px 12px;
+    min-width: 40px;
+    border: 1px solid var(--editable-border);
+    font-size: 1.05rem;
+    transition: border 0.2s, background 0.2s;
+    color: var(--primary-color);
+  }
+  .editable:focus {
+    border: 1.5px solid var(--editable-focus-border);
+    background: var(--editable-focus-bg);
+  }
+  
+  .canvas .block {
+    margin: 22px 0;
+  }
+  
+  /* Card component style */
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+    padding: 24px 20px 18px 20px;
+    border: 1.5px solid var(--card-border);
+    margin: 18px 0;
+  }
+  .card h3[contenteditable] {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: var(--card-title);
+    font-weight: 600;
+    outline: none;
+  }
+  .card p[contenteditable] {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+    outline: none;
+  }
+  
+  .footer {
+    background: var(--footer-bg);
+    color: var(--footer-color);
+    text-align: center;
+    padding: 16px 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -2px 12px rgba(79,140,255,0.08);
+    font-weight: 500;
+  }
+
+  .delete-btn {
+    float: right;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    margin-left: 8px;
+    background-color: crimson;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+
+  #canvas {
+    resize: both;
+    overflow: auto;
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 100%;
+    max-height: 80vh;
+    border: 1.5px solid var(--canvas-border);
+  }
+  
+  
